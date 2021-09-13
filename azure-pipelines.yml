@@ -20,7 +20,7 @@ steps:
 
 - script: |
     ./codeql-runner-linux init \
-    --repository ankitosh/sample-java-programs
+    --repository ankitosh/sample-java-programs \
     --github-url https://github.com \
     --github-auth $(GITHUB)
   displayName: 'Initialize CodeQl and Install Agent.'
