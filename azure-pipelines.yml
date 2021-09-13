@@ -25,6 +25,9 @@ steps:
     --github-auth $(GITHUB)
   displayName: 'Initialize CodeQl and Install Agent.'
 
+- script: gitleaks --config=.gitleaks.toml --repo-path=$(Build.Repository.LocalPath) --verbose --redact
+  displayName: 'Scan Code for Static Credentials'
+
 - script: |
     ./codeql-runner-linux analyze \
     --repository ankitosh/sample-java-programs \
