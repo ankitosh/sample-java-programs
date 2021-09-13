@@ -22,14 +22,14 @@ steps:
     ./codeql-runner-linux init \
     --repository ankitosh/sample-java-programs
     --github-url https://github.com \
-    --github-auth $GITHUB
+    --github-auth $(GITHUB)
   displayName: 'Initialize CodeQl and Install Agent.'
 
 - script: |
     ./codeql-runner-linux analyze \
     --repository ankitosh/sample-java-programs
     --github-url https://github.com \
-    --github-auth $GITHUB \
+    --github-auth $(GITHUB) \
     --commit $(Build.SourceVersion) \
     --ref $(Build.SourceBranch)
   displayName: 'Build Analyze and upload the code '
