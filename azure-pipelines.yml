@@ -27,7 +27,7 @@ steps:
 
 - script: |
     ./codeql-runner-linux analyze \
-    --repository ankitosh/sample-java-programs
+    --repository ankitosh/sample-java-programs \
     --github-url https://github.com \
     --github-auth $(GITHUB) \
     --commit $(Build.SourceVersion) \
